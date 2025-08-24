@@ -1,0 +1,64 @@
+# ——— Ian’s Kitty: Matrix-green + sane splits ———
+
+# Fonts (uncomment if you’ve got a Nerd Font installed)
+# font_family      JetBrainsMono Nerd Font
+# font_size        13.0
+
+# Scrollback & ergonomics
+scrollback_lines 100000
+enable_audio_bell no
+remember_window_size no
+initial_window_width  120c
+initial_window_height 36c
+window_margin_width 6
+
+# ——— Matrix-ish theme ———
+background #000000
+foreground #00FF00
+cursor     #00FF00
+
+selection_foreground #000000
+selection_background #00FF00
+
+url_color  #00FF00
+
+# Tab bar styling (subtle green accents)
+tab_bar_style powerline
+active_tab_foreground   #000000
+active_tab_background   #00FF00
+inactive_tab_foreground #00AA00
+inactive_tab_background #001800
+
+# Window borders (helpful when tiled)
+active_border_color   #00FF00
+inactive_border_color #004400
+
+# ——— Keybindings: splits, navigation, resize ———
+# ——— Reliable key foundation ———
+kitty_mod ctrl+shift   # make kitty_mod explicit on Linux
+
+# Splits
+map kitty_mod+enter launch --location=hsplit   # horizontal (stacked)
+map kitty_mod+e     launch --location=vsplit   # vertical (side-by-side)
+
+# Close current pane
+map kitty_mod+q close_window
+
+# Move focus
+map kitty_mod+left  neighboring_window left
+map kitty_mod+right neighboring_window right
+map kitty_mod+up    neighboring_window up
+map kitty_mod+down  neighboring_window down
+
+# Cycle panes
+map kitty_mod+] next_window
+map kitty_mod+[ previous_window
+
+# Resize (interactive)
+map kitty_mod+r start_resizing_window
+
+
+# Quality-of-life
+map ctrl+shift+t new_tab
+map ctrl+shift+w close_tab
+map ctrl+shift+alt+t set_tab_title
